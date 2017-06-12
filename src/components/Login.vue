@@ -1,6 +1,5 @@
 <script>
-import axios from 'axios'
-import qs from 'qs'
+import {signIn} from '@/api/users'
 export default {
   name: 'login',
   data () {
@@ -12,21 +11,13 @@ export default {
   },
   methods: {
     loginUser () {
-      axios.post('http://pilot.tqweem.com/api/login', qs.stringify({ 'email': this.email, 'password': this.password, 'api_key': this.api_key }),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' }
-       })
-      .then(
-        (response) => {
-          console.log(response)
-          const token = response.data.token
-          const base64Url = token.split('.')[1]
-          const base64 = base64Url.replace('-', '+').replace('_', '/')
-          console.log(JSON.parse(window.atob(base64)))
-          localStorage.setItem('token', token)
-        }
-      ).catch(
-        (error) => console.log(error)
-      )
+      signIn(this.email, this.password)
+      .then((res) => {
+        console.log(res)
+        .catch((err) => {
+          console.log(err)
+        })
+      })
     }
   }
 }

@@ -1,6 +1,5 @@
 <script>
-import axios from 'axios'
-import qs from 'qs'
+import {signUp} from '@/api/users'
 export default {
   name: 'register',
   data () {
@@ -13,14 +12,13 @@ export default {
   },
   methods: {
     registerUser () {
-      axios.post('http://pilot.tqweem.com/api/register', qs.stringify({ 'name': this.username, 'email': this.email, 'password': this.password, 'api_key': this.api_key }),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' }
-       })
-      .then(
-        (response) => console.log(response)
-      ).catch(
-        (error) => console.log(error)
-      )
+      signUp(this.username, this.email, this.password)
+      .then((res) => {
+        console.log(res)
+        .catch((err) => {
+          console.log(err)
+        })
+      })
     }
   }
 }
