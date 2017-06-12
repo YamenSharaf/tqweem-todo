@@ -9,11 +9,11 @@
 			hr
 		.panel__items
 			.item(v-for="todo in todoItems")
-				p.todo {{todo}}
+				p.todo(@click="markDone(todo.id)") {{todo.title}} ({{todo.id}})
 	.done.panel
 		.panel__header
-			h3 Done Items
+			h3 Done Items ({{doneCount}})
 			hr
 		.panel__items
-			.item
-				p.done Something Done
+			.item(v-for="done in doneItems")
+				p.done {{done.title}}

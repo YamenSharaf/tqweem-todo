@@ -67,12 +67,14 @@
 			flex-direction: column
 			align-items: center
 			width: 100%
+			overflow: auto
 			.item
 				display: flex
 				justify-content: flex-start
 				align-items: center
 				width: 95%
 				height: em(45)
+				min-height: em(45)
 				margin: 0 0 em(10) 0
 				background-color: $color__primary
 				color: $color__accent--white
@@ -85,8 +87,7 @@
 						text-decoration: line-through
 				.done
 					text-decoration: line-through
-					&:hover
-						text-decoration: none
+					cursor: default
 
 
 

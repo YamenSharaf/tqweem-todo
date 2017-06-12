@@ -14,9 +14,9 @@ export default {
       signIn(this.email, this.password)
       .then((res) => {
         console.log(res)
-        .catch((err) => {
-          console.log(err)
-        })
+      })
+      .catch((err) => {
+        console.log(err)
       })
     }
   }
