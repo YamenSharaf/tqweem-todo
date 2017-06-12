@@ -1,6 +1,9 @@
 .modal
 	h3 Login
 	form(method="post")
-		input(name="email" type="text" placeholder="Enter email")
-		input(name="password" type="password" placeholder="Enter password")
-		button(a="#" type="submit" value="Submit" ) Submit
+		input(name="email" type="text" placeholder="Enter email" v-model="email")
+		input(name="password" type="password" placeholder="Enter password" v-model="password")
+		button(type="submit" value="Submit" @click.prevent="loginUser" ) Submit
+		p
+			| Don't have an account?? 
+			a(href='/#/register') Sign up

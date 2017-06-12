@@ -1,19 +1,14 @@
-<template lang="pug" src="./templates/layout.pug" > 
-  <div id="app">
-  </div>
-</template>
-
 <script>
 import Login from './components/Login'
 import Register from './components/Register'
+import Main from './components/Main'
 export default {
   name: 'app',
   components: {
-    Login, Register
+    Login, Register, Main
   }
 }
 </script>
 
-<style lang="sass" src="./styles/app.sass">
-
-</style>
+<template lang="pug" src="./templates/layout.pug"></template>
+<style lang="sass" src="./styles/app.sass"></style>

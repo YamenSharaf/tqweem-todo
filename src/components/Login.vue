@@ -16,7 +16,14 @@ export default {
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' }
        })
       .then(
-        (response) => console.log(response)
+        (response) => {
+          console.log(response)
+          const token = response.data.token
+          const base64Url = token.split('.')[1]
+          const base64 = base64Url.replace('-', '+').replace('_', '/')
+          console.log(JSON.parse(window.atob(base64)))
+          localStorage.setItem('token', token)
+        }
       ).catch(
         (error) => console.log(error)
       )
@@ -26,7 +33,5 @@ export default {
 </script>
 
 
-<template lang="pug" src="./../templates/login.pug"  >
-</template>
-<style lang="sass" src="./../styles/app.sass">
-</style>
+<template lang="pug" src="@/templates/login.pug"></template>
+

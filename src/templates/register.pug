@@ -5,3 +5,6 @@
 		input(name="email" type="email" placeholder="Enter email" v-model="email")
 		input(name="password" type="password" placeholder="Enter password" v-model="password")
 		button(type="submit" value="Submit" @click.prevent="registerUser" ) Submit
+		p
+			| Already registered? 
+			a(href='/#/login') Sign in

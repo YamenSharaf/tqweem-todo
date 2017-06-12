@@ -3,7 +3,7 @@
 	flex-direction: column
 	justify-content: space-between
 	align-items: center
-	padding: em(50) em(30)
+	padding: em(40) em(30)
 	box-shadow: $shadow--medium
 	background-color: $color__text--primary
 	h3
@@ -11,6 +11,7 @@
 		text-transform: uppercase
 		letter-spacing: em(2)
 		font-size: em(30)
+		font-family: $font--title
 	form
 		display: flex
 		flex-direction: column
@@ -21,7 +22,11 @@
 			margin: em(10) 0
 			padding: em(20)
 			background-color: $color__background--light
-			color: $color__text--primary
+			color: darken($color__background--dark, 15%)
+			font-family: $font--text
+			&:focus
+				border: 2px solid $color__background--dark
+				outline: none
 		
 		button
 			cursor: pointer
@@ -32,6 +37,15 @@
 			margin-top: em(10)
 			color: $color__text--primary
 			text-transform: uppercase
+		
+		p
+			color: $color__background--dark
+			margin-bottom: -em(50)
+			a
+				text-decoration: none
+				color: $color__background--primary
+				&:hover
+					text-decoration: underline
 
 
 

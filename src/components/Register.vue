@@ -27,5 +27,4 @@ export default {
 </script>
 
 
-<template lang="pug" src="./../templates/register.pug"  >
-</template>
+<template lang="pug" src="@/templates/register.pug"></template>
