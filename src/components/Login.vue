@@ -13,7 +13,13 @@ export default {
     loginUser () {
       signIn(this.email, this.password)
       .then((res) => {
-        console.log(res)
+        console.log(res.status)
+        if (res.status === 200) {
+          localStorage.setItem('name', res.data.name)
+          this.$router.push('/main')
+        } else {
+          alert('Invalid credentials. Please Register first')
+        }
       })
       .catch((err) => {
         console.log(err)

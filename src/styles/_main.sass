@@ -8,14 +8,18 @@
 	height: 70vh
 	@media screen and (max-width: 700px)
 		flex-direction: column
+		width: 95%
+		height: 100%
+		padding: em(20) 0
 	.panel
 		display: flex
 		flex-direction: column
 		justify-content: space-between
 		align-items: center
 		flex: 1 0 50%
+		width: 90%
 		max-width: 48%
-		min-width: 30%
+		min-width: 40%
 		height: 90%
 		background-color: $color__accent--white
 		color: $color__primary
@@ -26,7 +30,7 @@
 			min-width: 80%
 			flex: 1 0 50%
 		.panel__header
-			flex: 1 0 10%
+			flex: 1 0 20%
 			width: 100%
 			display: flex
 			flex-direction: column
@@ -52,6 +56,7 @@
 					border: em(1) solid $color__primary--dark
 					color: $color__primary--dark
 					font-family: $font--text
+					padding: 0 em(10)
 
 			hr
 				align-self: center
@@ -62,7 +67,7 @@
 				margin: 0 0
 			
 		.panel__items
-			flex: 9 0 90%
+			flex: 9 0 80%
 			display: flex
 			flex-direction: column
 			align-items: center
@@ -88,6 +93,7 @@
 				.done
 					text-decoration: line-through
 					cursor: default
+					color: $color__accent--grey
 
 
 

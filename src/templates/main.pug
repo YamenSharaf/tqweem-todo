@@ -9,7 +9,7 @@
 			hr
 		.panel__items
 			.item(v-for="todo in todoItems")
-				p.todo(@click="markDone(todo.id)") {{todo.title}} ({{todo.id}})
+				p.todo(@click="markDone(todo.id)") {{todo.title}}
 	.done.panel
 		.panel__header
 			h3 Done Items ({{doneCount}})

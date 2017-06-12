@@ -4,6 +4,18 @@ import Register from './components/Register'
 import Main from './components/Main'
 export default {
   name: 'app',
+  data () {
+    return {
+      user: ''
+    }
+  },
+  computed: {
+    getUser () {
+      this.user = localStorage.getItem('name')
+      console.log(this.user)
+      return this.user
+    }
+  },
   components: {
     Login, Register, Main
   }

@@ -15,7 +15,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       addTodo () {
       createTask(this.todoInput)
       .then((res) => {
-        console.log(res)
+        console.log(res.status)
         this.refreshTodos()
       })
       .catch((err) => {
@@ -40,7 +40,6 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
     markDone (id) {
       crossTask(id)
       .then((res) => {
-        console.log(res)
         this.refreshTodos()
       })
       .catch((err) => {
@@ -56,7 +55,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
         return this.doneItems.length
       }
     },
-    created () {
+    mounted () {
       this.refreshTodos()
     }
   }
