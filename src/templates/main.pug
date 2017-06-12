@@ -1,2 +1,19 @@
 .main
-	h1 Hello Main
+	.todo.panel
+		.panel__header
+			.header__controls
+				h3 Todo Items ({{todoCount}})
+				form(method="post")
+					input(type="text" v-model="todoInput" placeholder="Todo item")
+					button(type="submit" @click.prevent="addTodo") Add
+			hr
+		.panel__items
+			.item(v-for="todo in todoItems")
+				p.todo {{todo}}
+	.done.panel
+		.panel__header
+			h3 Done Items
+			hr
+		.panel__items
+			.item
+				p.done Something Done

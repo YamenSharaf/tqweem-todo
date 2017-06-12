@@ -4,3 +4,12 @@ $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
+
+//Flat buttons
+@mixin button {
+  cursor: pointer;
+  background-color: $color__primary--dark;
+  border: none;
+  color: $color__accent--white;
+  text-transform: uppercase;
+}

@@ -5,9 +5,9 @@
 	align-items: center
 	padding: em(40) em(30)
 	box-shadow: $shadow--medium
-	background-color: $color__text--primary
+	background-color: $color__accent--white
 	h3
-		color: $color__background--primary
+		color: $color__primary
 		text-transform: uppercase
 		letter-spacing: em(2)
 		font-size: em(30)
@@ -21,29 +21,25 @@
 			border: 1px solid
 			margin: em(10) 0
 			padding: em(20)
-			background-color: $color__background--light
-			color: darken($color__background--dark, 15%)
+			background-color: $color__primary--light
+			color: darken($color__primary--dark, 15%)
 			font-family: $font--text
 			&:focus
-				border: 2px solid $color__background--dark
+				border: 2px solid $color__primary--dark
 				outline: none
 		
 		button
-			cursor: pointer
+			+button
 			align-self: stretch
-			background-color: $color__background--dark
-			border: none
 			height: em(40)
 			margin-top: em(10)
-			color: $color__text--primary
-			text-transform: uppercase
 		
 		p
-			color: $color__background--dark
+			color: $color__primary--dark
 			margin-bottom: -em(50)
 			a
 				text-decoration: none
-				color: $color__background--primary
+				color: $color__primary
 				&:hover
 					text-decoration: underline
 

@@ -1,0 +1,94 @@
+.main
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: center
+	width: 85vw
+	height: 70vh
+	@media screen and (max-width: 700px)
+		flex-direction: column
+	.panel
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		flex: 1 0 50%
+		max-width: 48%
+		min-width: 30%
+		height: 90%
+		background-color: $color__accent--white
+		color: $color__primary
+		box-shadow: $shadow--medium
+		@media screen and (max-width: 700px)
+			max-height: 48%
+			max-width: 100%
+			min-width: 80%
+			flex: 1 0 50%
+		.panel__header
+			flex: 1 0 10%
+			width: 100%
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: flex-start
+			.header__controls
+				display: flex
+				width: 100%
+				justify-content: space-between
+			h3
+				padding: em(5) em(10)
+				margin: 0 0
+				font-weight: lighter
+				font-family: $font--title
+				text-transform: uppercase
+			form
+				button
+					+button
+					background-color: $color__primary
+					margin: em(5) em(10)
+				input
+					outline: none
+					border: em(1) solid $color__primary--dark
+					color: $color__primary--dark
+					font-family: $font--text
+
+			hr
+				align-self: center
+				width: 95%
+				border: none
+				height: em(2)
+				background-color: $color__primary--dark
+				margin: 0 0
+			
+		.panel__items
+			flex: 9 0 90%
+			display: flex
+			flex-direction: column
+			align-items: center
+			width: 100%
+			.item
+				display: flex
+				justify-content: flex-start
+				align-items: center
+				width: 95%
+				height: em(45)
+				margin: 0 0 em(10) 0
+				background-color: $color__primary
+				color: $color__accent--white
+				p
+					padding: 0 em(10)
+					letter-spacing: em(1)
+					cursor: pointer
+				.todo
+					&:hover
+						text-decoration: line-through
+				.done
+					text-decoration: line-through
+					&:hover
+						text-decoration: none
+
+
+
+
+
