@@ -23,7 +23,6 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
         }
       createTask(this.todoInput)
       .then((res) => {
-        console.log(res)
         if (res.status === 'success') {
           this.$toast(`<i class="fa fa-smile-o"></i>Item added`, {
             horizontalPosition: 'center',
