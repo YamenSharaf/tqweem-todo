@@ -6,7 +6,6 @@ import qs from 'qs'
 
 // Global constants
 const apiKey = 'b2306b4eb272a2956e873591b392f9ff'
-
 // Getting new token
 let getToken = () => {
   return localStorage.getItem('token')
