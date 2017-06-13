@@ -1,0 +1,12 @@
+transition(name="fade" appear)
+	.welcome
+		h1
+			vue-typer(text="Organize your life! Start now!" :repeat='0')
+		.buttons__direct
+			button(type="button" @click="goToLogin")
+				i.fa.fa-sign-in
+				| Login
+			
+			button(type="button" @click="goToRegister")
+				i.fa.fa-user-plus
+				| Register

@@ -5,5 +5,7 @@ header
 			.logo__text
 				h1 Todo List
 				h4 Be more productive
-	.header__user(v-if="getUser") Welcome, {{getUser}}
+	.header__user(v-if="user")
+		| Welcome, {{user}}
+		p.logout(@click="logOut") Log out?
 	.header__user(v-else) Hey there, stranger

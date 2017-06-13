@@ -1,0 +1,35 @@
+.welcome
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	align-items: center
+	height: 70%
+	width: 70%
+	background-color: rgba($color__accent--white, 0.5)
+	h1
+		font-size: em(50)
+		font-weight: lighter
+		@media screen and (max-width: 700px)
+			font-size: em(25)
+	.buttons__direct
+		width: 80%
+		height: 50%
+		display: flex
+		justify-content: space-around
+		align-items: center
+		button
+			+button
+			width: 40%
+			height: 30%
+			color: rgba($color__accent--white, 0.9)
+			font-family: $font--title
+			font-size: em(30)
+			letter-spacing: em(3)
+			@media screen and (max-width: 900px)
+				font-size: em(20)
+				letter-spacing: em(1)
+				width: 80%
+		@media screen and (max-width: 700px)
+			flex-direction: column
+
+	

@@ -10,12 +10,20 @@ export default {
       user: ''
     }
   },
-  computed: {
+  methods: {
     getUser () {
       this.user = localStorage.getItem('name')
       console.log(this.user)
-      return this.user
+    },
+    logOut () {
+      localStorage.setItem('name', '')
+      localStorage.setItem('token', '')
+      this.user = ''
+      this.$router.push('/')
     }
+  },
+  beforeUpdate () {
+    this.getUser()
   },
   components: {
     Home, Login, Register, Main

@@ -21,7 +21,7 @@ export function getTodoTasks () {
       { headers: { 'Authorization': 'Bearer: ' + token }
        })
        .then(
-        (response) => response.data
+        (response) => response
       ).catch(
         (error) => error
       )

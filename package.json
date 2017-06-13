@@ -16,9 +16,11 @@
     "jquery": "^3.2.1",
     "qs": "^6.4.0",
     "vue": "^2.3.3",
+    "vue-animate": "0.0.4",
     "vue-animate-css": "^1.0.0",
     "vue-easy-toast": "^1.0.2",
-    "vue-router": "^2.3.1"
+    "vue-router": "^2.3.1",
+    "vue-typer": "^1.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

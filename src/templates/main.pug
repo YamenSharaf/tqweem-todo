@@ -2,19 +2,29 @@
 	.todo.panel
 		.panel__header
 			.header__controls
-				h3 Todo Items ({{todoCount}})
+				h3
+					i.fa.fa-arrow-right
+					| Todo Items ({{todoCount}})
 				form(method="post")
 					input(type="text" v-model="todoInput" placeholder="Todo item")
-					button(type="submit" @click.prevent="addTodo") Add
+					button(type="submit" @click.prevent="addTodo")
+						i.fa.fa-plus
+						| Add
 			hr
 		.panel__items
 			.item(v-for="todo in todoItems")
-				p.todo(@click="markDone(todo.id)") {{todo.title}}
+				p.todo(@click="markDone(todo.id)")
+					i.fa.fa-check-square-o
+					| {{todo.title}}
 				p.date {{todo.created_at.slice(11,16)}}
 	.done.panel
 		.panel__header
-			h3 Done Items ({{doneCount}})
+			h3
+				i.fa.fa-arrow-right
+				| Done Items ({{doneCount}})
 			hr
 		.panel__items
 			.item(v-for="done in doneItems")
-				p.done {{done.title}}
+				p.done
+					i.fa.fa-check-square
+					| {{done.title}}

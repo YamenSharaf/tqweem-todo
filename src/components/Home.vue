@@ -2,7 +2,15 @@
 export default {
   data () {
     return {
-      msg: 'Hello Home'
+      animate: true
+    }
+  },
+  methods: {
+    goToLogin () {
+      this.$router.push('/login')
+    },
+    goToRegister () {
+      this.$router.push('/register')
     }
   }
 }

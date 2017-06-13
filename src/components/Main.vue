@@ -26,7 +26,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
     refreshTodos () {
       getTodoTasks()
       .then((res) => {
-        this.todoItems = res.reverse()
+        this.todoItems = res.data.reverse()
       }).catch((err) => {
         console.log(err)
       })
@@ -55,8 +55,23 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
         return this.doneItems.length
       }
     },
-    mounted () {
-      this.refreshTodos()
+    beforeMount () {
+      this.todoItems = []
+      this.doneItems = []
+      getTodoTasks()
+      .then((res) => {
+        if (res.status === 200) {
+          console.log('success')
+          this.refreshTodos()
+        } else {
+          this.$router.push('/login')
+          this.$toast('Invalid token! Please sign in!', {
+            horizontalPosition: 'center',
+            className: 'toast',
+            duration: 2000
+          })
+        }
+      })
     }
   }
 </script>

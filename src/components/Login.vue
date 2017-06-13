@@ -18,7 +18,11 @@ export default {
           localStorage.setItem('name', res.data.name)
           this.$router.push('/main')
         } else {
-          alert('Invalid credentials. Please Register first')
+          this.$toast('Invalid credentials. Please sign up', {
+            horizontalPosition: 'center',
+            className: 'toast',
+            duration: 2000
+          })
         }
       })
       .catch((err) => {
