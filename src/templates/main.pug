@@ -10,6 +10,7 @@
 		.panel__items
 			.item(v-for="todo in todoItems")
 				p.todo(@click="markDone(todo.id)") {{todo.title}}
+				p.date {{todo.created_at.slice(11,16)}}
 	.done.panel
 		.panel__header
 			h3 Done Items ({{doneCount}})
