@@ -11,13 +11,16 @@ export default {
   },
   methods: {
     loginUser () {
+      // Handle sign-in
       signIn(this.email, this.password)
       .then((res) => {
+        // If okay, go to home page
         console.log(res.status)
         if (res.status === 200) {
           localStorage.setItem('name', res.data.name)
           this.$router.push('/main')
         } else {
+          // If not okay show error toast
           this.$toast('Invalid credentials. Please sign up', {
             horizontalPosition: 'center',
             className: 'toast',

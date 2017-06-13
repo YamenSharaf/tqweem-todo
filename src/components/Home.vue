@@ -6,9 +6,11 @@ export default {
     }
   },
   methods: {
+    // Redirect to login page
     goToLogin () {
       this.$router.push('/login')
     },
+    // Redirect to registration page
     goToRegister () {
       this.$router.push('/register')
     }

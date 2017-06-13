@@ -1,4 +1,5 @@
 <script>
+// Loading child components into main component
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
@@ -7,25 +8,26 @@ export default {
   name: 'app',
   data () {
     return {
+      // Holds the user name for keeping a session
       user: ''
     }
   },
   methods: {
+    // Get the user name from local storage and save is
     getUser () {
       this.user = localStorage.getItem('name')
       console.log(this.user)
     },
     logOut () {
+      // Clear token and user then go home
       localStorage.setItem('name', '')
       localStorage.setItem('token', '')
       this.user = ''
       this.$router.push('/')
     }
   },
+  // Get user on component update
   beforeUpdate () {
-    this.getUser()
-  },
-  beforeCreate () {
     this.getUser()
   },
   components: {

@@ -12,10 +12,12 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       }
     },
     methods: {
+      // Handle adding a new todo item
       addTodo () {
       createTask(this.todoInput)
       .then((res) => {
         console.log(res.status)
+        // Refresh list afterwards
         this.refreshTodos()
       })
       .catch((err) => {
@@ -23,22 +25,28 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
         })
       this.todoInput = ''
     },
+    // Whenever a list-refresh is needed
     refreshTodos () {
       this.todoItems = null
       this.todoItems = []
+      // Get current tasks that are uncompleted
       getTodoTasks()
       .then((res) => {
+        // reversing the array to show newest first
         this.todoItems = res.data.reverse()
       }).catch((err) => {
         console.log(err)
       })
+      // Get completed tasks
       getDoneTasks()
       .then((res) => {
+        // reversing the array to show newest first
         this.doneItems = res.reverse()
       }).catch((err) => {
         console.log(err)
       })
     },
+    // Handle put request to change status
     markDone (id) {
       crossTask(id)
       .then((res) => {
@@ -50,9 +58,11 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
     }
     },
     computed: {
+      // Number of todos
       todoCount () {
         return this.todoItems.length
       },
+      // Number of done items
       doneCount () {
         return this.doneItems.length
       }
