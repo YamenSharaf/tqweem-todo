@@ -25,7 +25,7 @@ export default {
       this.$router.push('/')
     },
     userRedirect () {
-      if (this.user !== '') {
+      if (this.user !== '' || undefined || null) {
         this.$router.push('/todos')
       } else {
         this.$router.push('/')
@@ -38,9 +38,6 @@ export default {
   },
   beforeMount () {
     this.getUser()
-    this.userRedirect()
-  },
-  created () {
     this.userRedirect()
   },
   components: {
