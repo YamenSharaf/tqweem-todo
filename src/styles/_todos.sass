@@ -28,7 +28,10 @@
 			max-height: 48%
 			max-width: 100%
 			min-width: 80%
+			min-height: 50%
 			flex: 1 0 50%
+			margin: em(20) 0
+			max-height: calc(100% + em(100))
 		.panel__header
 			flex: 1 0 20%
 			width: 100%
@@ -36,6 +39,8 @@
 			flex-direction: column
 			justify-content: center
 			align-items: flex-start
+			@media screen and (max-width: 700px)
+				height: em(90)
 			.header__controls
 				display: flex
 				width: 100%

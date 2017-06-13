@@ -85,4 +85,4 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
   }
 </script>
 
-<template lang="pug" src="@/templates/main.pug"></template>
+<template lang="pug" src="@/templates/todos.pug"></template>
