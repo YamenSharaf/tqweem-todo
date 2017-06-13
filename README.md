@@ -35,10 +35,10 @@ Vue-Router, Vue-Typer, Vue-Toast
 ## Build Setup
 
 ``` bash
-# install dependencies
+# 1. install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# 2.  serve with hot reload at localhost:8080
 npm run dev
 
 ```
