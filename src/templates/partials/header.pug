@@ -1,10 +1,9 @@
 header
-	a(href='/#/')
-		.logo__header
-			img(src="./../assets/todo-logo.png" class="logo__image")
-			.logo__text
-				h1 Todo List
-				h4 Be more productive
+	.logo__header(@click="userRedirect")
+		img(src="./../assets/todo-logo.png" class="logo__image")
+		.logo__text
+			h1 Todo List
+			h4 Be more productive
 	.header__user(v-if="user")
 		| Welcome, {{user}}
 		p.logout(@click="logOut") Log out?

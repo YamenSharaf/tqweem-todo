@@ -23,6 +23,13 @@ export default {
       this.user = ''
       localStorage.setItem('token', '')
       this.$router.push('/')
+    },
+    userRedirect () {
+      if (this.user !== '') {
+        this.$router.push('/todos')
+      } else {
+        this.$router.push('/')
+      }
     }
   },
   // Get user on component update
@@ -31,6 +38,10 @@ export default {
   },
   beforeMount () {
     this.getUser()
+    this.userRedirect()
+  },
+  created () {
+    this.userRedirect()
   },
   components: {
     Home, Login, Register, Todos

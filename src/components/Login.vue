@@ -20,8 +20,7 @@ export default {
           this.$router.push('/todos')
         } else {
           // If not okay show error toast
-          this.$toast(`<i class="fa fa-frown-o"></i>
- Invalid credentials. Please sign up`, {
+          this.$toast(`<i class="fa fa-frown-o"></i> Invalid credentials. Please sign up`, {
             horizontalPosition: 'center',
             className: 'toast-danger',
             duration: 5000
