@@ -2,6 +2,36 @@
 
 > Project for tqweem.com
 
+# Objectives
+
+> A simple todo app enabling users to register and login using a backend API, afterwhich they can view their todo lists and mark items as done
+
+
+## Tools used to create this app
+
+``` bash
+# Front-end framework
+Vue.js
+
+# Templating engine
+Pug.js
+
+# CSS preprocessor
+Sass
+
+# Interface scaffolding
+Flexbox
+
+# Workflow tools
+Webpack, Git, Visual Studio Code.
+
+# Dependencies
+Vue-Router, Vue-Typer, Vue-Toast
+
+
+```
+
+
 ## Build Setup
 
 ``` bash
@@ -11,11 +41,6 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Made with love by Yamen Sharaf for tqweem.com
