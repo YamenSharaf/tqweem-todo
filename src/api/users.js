@@ -12,7 +12,14 @@ export function signUp (username, email, password) {
   // API URL
   const url = 'http://pilot.tqweem.com/api/register'
   // POST //Params: username, email, password, API key
-    return axios.post(url, qs.stringify({ 'name': username, 'email': email, 'password': password, 'api_key': apiKey }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' }
+    return axios.post(url, qs.stringify({ 'name': username, 'email': email, 'password': password, 'api_key': apiKey }),
+     {
+      headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Access-Control-Allow-Origin': '*'
+      }
        })
        .then(
         (response) => response.data

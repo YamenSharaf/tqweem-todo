@@ -6,7 +6,11 @@ import qs from 'qs'
 
 // Global constants
 const apiKey = 'b2306b4eb272a2956e873591b392f9ff'
-const token = localStorage.getItem('token')
+
+// Getting new token
+let getToken = () => {
+  return localStorage.getItem('token')
+}
 
 // Creating tasks
 export function createTask (task) {
@@ -14,7 +18,7 @@ export function createTask (task) {
   const url = 'http://pilot.tqweem.com/api/task/create'
   // POST //Params: Title, API Key
   return axios.post(url, qs.stringify({ 'title': task, 'api_key': apiKey }),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json', 'Authorization': 'Bearer: ' + token }
+      { headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json', 'Authorization': 'Bearer: ' + getToken() }
        })
        .then(
          // Return results
@@ -30,7 +34,7 @@ export function getTodoTasks () {
   const url = 'http://pilot.tqweem.com/api/task/todo?api_key=b2306b4eb272a2956e873591b392f9ff'
   // GET // Params: API key
   return axios.get(url,
-      { headers: { 'Authorization': 'Bearer: ' + token }
+      { headers: { 'Authorization': 'Bearer: ' + getToken() }
        })
        .then(
         (response) => response
@@ -45,10 +49,10 @@ export function getDoneTasks () {
   const url = 'http://pilot.tqweem.com/api/task/done?api_key=b2306b4eb272a2956e873591b392f9ff'
   // GET // Params: API key
   return axios.get(url,
-      { headers: { 'Authorization': 'Bearer: ' + token }
+      { headers: { 'Authorization': 'Bearer: ' + getToken() }
        })
        .then(
-        (response) => response.data
+        (response) => response
       ).catch(
         (error) => error
       )
@@ -60,7 +64,7 @@ export function crossTask (id) {
   const url = `http://pilot.tqweem.com/api/task/${id}?api_key=b2306b4eb272a2956e873591b392f9ff`
   // PUT // Params: Task ID, API key
   return axios.put(url, qs.stringify({ 'api_key': apiKey }),
-      { headers: { 'Accept': 'application/json', 'Authorization': 'Bearer: ' + token }
+      { headers: { 'Accept': 'application/json', 'Authorization': 'Bearer: ' + getToken() }
        })
        .then(
         (response) => response

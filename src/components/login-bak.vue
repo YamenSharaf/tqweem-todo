@@ -14,7 +14,7 @@ export default {
       // Handle sign-in
       signIn(this.email, this.password)
       .then((res) => {
-        // If okay, go to main app page
+        // If okay, go to home page
         if (res.status === 200) {
           localStorage.setItem('name', res.data.name)
           this.$router.push('/main')
@@ -37,4 +37,3 @@ export default {
 
 
 <template lang="pug" src="@/templates/login.pug"></template>
-

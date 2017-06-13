@@ -16,13 +16,12 @@ export default {
     // Get the user name from local storage and save is
     getUser () {
       this.user = localStorage.getItem('name')
-      console.log(this.user)
     },
     logOut () {
       // Clear token and user then go home
       localStorage.setItem('name', '')
-      localStorage.setItem('token', '')
       this.user = ''
+      localStorage.setItem('token', '')
       this.$router.push('/')
     }
   },

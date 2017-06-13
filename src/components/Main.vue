@@ -41,7 +41,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       getDoneTasks()
       .then((res) => {
         // reversing the array to show newest first
-        this.doneItems = res.reverse()
+        this.doneItems = res.data.reverse()
       }).catch((err) => {
         console.log(err)
       })
@@ -68,11 +68,9 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       }
     },
     beforeMount () {
-      console.log('refreshed')
       getTodoTasks()
       .then((res) => {
         if (res.status === 200) {
-          console.log('success')
           this.refreshTodos()
         } else {
           this.$router.push('/login')
