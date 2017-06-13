@@ -18,3 +18,17 @@ $browser-context: 16; // Default
     border: em(1) solid $color__primary--dark;
   }
 }
+
+//Toast
+
+@mixin toast {
+	background-color: rgba($color__accent--black, 0.9);
+	color: $color__accent--white;
+	padding: 2%;
+	margin-top: 15%;
+	border-radius: 0;
+	width: em(200);
+	height: auto;
+	box-shadow: $shadow--light;
+}
+

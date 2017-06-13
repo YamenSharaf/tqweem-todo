@@ -18,17 +18,18 @@ export default {
         if (res.status === 'success') {
           // In case of success, go to login page
           this.$router.push('/login')
-          this.$toast('User created. Sign in please', {
+          this.$toast(`<i class="fa fa-smile-o"></i>
+User created successfully. Sign in please`, {
             horizontalPosition: 'center',
-            className: 'toast',
-            duration: 2000
+            className: 'toast-success',
+            duration: 4000
           })
         } else {
           // Did not create user
-          this.$toast('Could not create user, please try again with different credentials', {
+          this.$toast(`<i class="fa fa-frown-o"></i>Could not create user, please try again with different credentials`, {
             horizontalPosition: 'center',
-            className: 'toast',
-            duration: 2000
+            className: 'toast-danger',
+            duration: 4000
           })
         }
       })

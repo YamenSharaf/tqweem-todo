@@ -12,7 +12,9 @@ body
 	font-family: $font--text
 	height: 100%
 	@media screen and (max-width: 700px)
+		min-height: 100%
 		height: auto
+		max-height: 150vh
 	
 // Entire App base styles
 #app
@@ -21,6 +23,8 @@ body
 	justify-content: space-between
 	align-items: center
 	height: 100%
+	@media screen and (max-width: 700px)
+		height: 130vh
 
 header
 	min-height: em(80)
@@ -61,16 +65,17 @@ footer
 	align-items: center
 	text-align: center
 
-// Toast style
-.toast
-	background-color: rgba($color__primary, 0.7)
+// Toast styles
+.toast-info
+	+toast
 	color: $color__accent--white
-	padding: 2%
-	margin-top: 6%
-	border-radius: 0
-	width: em(200)
-	height: em(20)
-	box-shadow: $shadow--light
+.toast-danger
+	+toast
+	color: lighten($color__accent--red, 15%)
+.toast-success
+	+toast
+	color: $color__primary--light
+
 
 // Font Awesome margin
 i

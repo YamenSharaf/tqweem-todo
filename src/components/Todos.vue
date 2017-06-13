@@ -15,15 +15,22 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       // Handle adding a new todo item
       addTodo () {
         if (this.todoInput === '') {
-          this.$toast('Please enter your text first', {
+          this.$toast(`<i class="fa fa-meh-o"></i>Please enter your text first`, {
             horizontalPosition: 'center',
-            className: 'toast',
-            duration: 1500
+            className: 'toast-info',
+            duration: 4000
           })
         }
       createTask(this.todoInput)
       .then((res) => {
-        console.log(res.status)
+        console.log(res)
+        if (res.status === 'success') {
+          this.$toast(`<i class="fa fa-smile-o"></i>Item added`, {
+            horizontalPosition: 'center',
+            className: 'toast-success',
+            duration: 1000
+          })
+        }
         // Refresh list afterwards
         this.refreshTodos()
       })
@@ -38,10 +45,10 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       getTodoTasks()
       .then((res) => {
         if (res.data.length === 0) {
-          this.$toast(`You don't have any items. Let's get to work!`, {
+          this.$toast(`<i class="fa fa-smile-o"></i>You don't have any items. Let's get to work!`, {
             horizontalPosition: 'center',
-            className: 'toast',
-            duration: 2000
+            className: 'toast-info',
+            duration: 4000
           })
         }
         // reversing the array to show newest first
@@ -86,10 +93,10 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
           this.refreshTodos()
         } else {
           this.$router.push('/login')
-          this.$toast('Invalid token! Please sign in!', {
+          this.$toast(`<i class="fa fa-frown-o"></i>Invalid token! Please sign in!`, {
             horizontalPosition: 'center',
-            className: 'toast',
-            duration: 2000
+            className: 'toast-danger',
+            duration: 5000
           })
         }
       })
