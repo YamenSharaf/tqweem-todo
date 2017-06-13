@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
-import Main from '@/components/Main'
+import Todos from '@/components/Todos'
 import Home from '@/components/Home'
 
 Vue.use(Router)
@@ -25,9 +25,9 @@ export default new Router({
       component: Register
     },
     {
-      path: '/main',
-      name: 'Main',
-      component: Main
+      path: '/todos',
+      name: 'Todos',
+      component: Todos
 
     }
 

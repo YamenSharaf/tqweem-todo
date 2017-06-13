@@ -2,7 +2,7 @@
 
 import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
   export default {
-    name: 'main',
+    name: 'todos',
     data () {
       return {
         todoInput: '',

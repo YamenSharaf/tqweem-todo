@@ -3,7 +3,7 @@
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
-import Main from './components/Main'
+import Todos from './components/Todos'
 export default {
   name: 'app',
   data () {
@@ -30,7 +30,7 @@ export default {
     this.getUser()
   },
   components: {
-    Home, Login, Register, Main
+    Home, Login, Register, Todos
   }
 }
 </script>

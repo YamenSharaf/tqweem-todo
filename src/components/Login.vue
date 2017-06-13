@@ -17,7 +17,7 @@ export default {
         // If okay, go to main app page
         if (res.status === 200) {
           localStorage.setItem('name', res.data.name)
-          this.$router.push('/main')
+          this.$router.push('/todos')
         } else {
           // If not okay show error toast
           this.$toast('Invalid credentials. Please sign up', {
