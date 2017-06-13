@@ -14,7 +14,20 @@ export default {
     registerUser () {
       signUp(this.username, this.email, this.password)
       .then((res) => {
-        console.log(res)
+        if (res.status === 'success') {
+          this.$router.push('/login')
+          this.$toast('User created. Sign in please', {
+            horizontalPosition: 'center',
+            className: 'toast',
+            duration: 2000
+          })
+        } else {
+          this.$toast('Could not create user, please try again with different credentials', {
+            horizontalPosition: 'center',
+            className: 'toast',
+            duration: 2000
+          })
+        }
       })
       .catch((err) => {
         console.log(err)

@@ -24,6 +24,8 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       this.todoInput = ''
     },
     refreshTodos () {
+      this.todoItems = null
+      this.todoItems = []
       getTodoTasks()
       .then((res) => {
         this.todoItems = res.data.reverse()
@@ -56,8 +58,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       }
     },
     beforeMount () {
-      this.todoItems = []
-      this.doneItems = []
+      console.log('refreshed')
       getTodoTasks()
       .then((res) => {
         if (res.status === 200) {

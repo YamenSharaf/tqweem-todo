@@ -25,6 +25,9 @@ export default {
   beforeUpdate () {
     this.getUser()
   },
+  beforeCreate () {
+    this.getUser()
+  },
   components: {
     Home, Login, Register, Main
   }
