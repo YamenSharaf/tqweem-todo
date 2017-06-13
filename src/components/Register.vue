@@ -16,10 +16,10 @@ export default {
       signUp(this.username, this.email, this.password)
       .then((res) => {
         if (res.status === 'success') {
+          localStorage.setItem('name', res.user.name)
           // In case of success, go to login page
-          this.$router.push('/login')
-          this.$toast(`<i class="fa fa-smile-o"></i>
-User created successfully. Sign in please`, {
+          this.$router.push('/todos')
+          this.$toast(`<i class="fa fa-smile-o"></i>User created successfully. You've been signed in`, {
             horizontalPosition: 'center',
             className: 'toast-success',
             duration: 4000

@@ -22,7 +22,11 @@ export function signUp (username, email, password) {
       }
        })
        .then(
-        (response) => response.data
+        (response) => {
+          let token = response.data.user.token
+          localStorage.setItem('token', token)
+          return response.data
+        }
       ).catch(
         (error) => error
       )
@@ -37,7 +41,7 @@ export function signIn (email, password) {
        .then(
         (response) => {
           // Grabbing unique JWT
-          const token = response.data.token
+          let token = response.data.token
           // Keeping the token in local storage for later use
           localStorage.setItem('token', token)
           return response
