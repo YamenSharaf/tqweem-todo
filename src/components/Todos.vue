@@ -44,11 +44,13 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       getTodoTasks()
       .then((res) => {
         if (res.data.length === 0) {
-          this.$toast(`<i class="fa fa-smile-o"></i>You don't have any items. Let's get to work!`, {
+          setTimeout(() => {
+            this.$toast(`<i class="fa fa-smile-o"></i>You don't have any items. Let's get to work!`, {
             horizontalPosition: 'center',
             className: 'toast-info',
             duration: 4000
           })
+          }, 1500)
         }
         // reversing the array to show newest first
         this.todoItems = res.data.reverse()

@@ -22,7 +22,7 @@ export default {
           this.$toast(`<i class="fa fa-smile-o"></i>User created successfully. You've been signed in`, {
             horizontalPosition: 'center',
             className: 'toast-success',
-            duration: 4000
+            duration: 6000
           })
         } else {
           // Did not create user
