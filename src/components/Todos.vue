@@ -14,6 +14,13 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
     methods: {
       // Handle adding a new todo item
       addTodo () {
+        if (this.todoInput === '') {
+          this.$toast('Please enter your text first', {
+            horizontalPosition: 'center',
+            className: 'toast',
+            duration: 1500
+          })
+        }
       createTask(this.todoInput)
       .then((res) => {
         console.log(res.status)
@@ -27,11 +34,16 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
     },
     // Whenever a list-refresh is needed
     refreshTodos () {
-      this.todoItems = null
-      this.todoItems = []
       // Get current tasks that are uncompleted
       getTodoTasks()
       .then((res) => {
+        if (res.data.length === 0) {
+          this.$toast(`You don't have any items. Let's get to work!`, {
+            horizontalPosition: 'center',
+            className: 'toast',
+            duration: 2000
+          })
+        }
         // reversing the array to show newest first
         this.todoItems = res.data.reverse()
       }).catch((err) => {

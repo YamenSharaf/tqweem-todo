@@ -12,4 +12,9 @@ $browser-context: 16; // Default
   border: none;
   color: $color__accent--white;
   text-transform: uppercase;
+  &:hover {
+    background-color: $color__accent--white;
+    color: $color__primary--dark;
+    border: em(1) solid $color__primary--dark;
+  }
 }
