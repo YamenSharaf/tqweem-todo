@@ -12,6 +12,7 @@
 						| Add
 			hr
 		.panel__items
+			dot-loader(:loading="loadingTodo" :color="color")
 			.item(v-for="todo in todoItems")
 				p.todo(@click="markDone(todo.id)")
 					i.fa.fa-check-square-o
@@ -24,6 +25,7 @@
 				| Done Items ({{doneCount}})
 			hr
 		.panel__items
+			dot-loader(:loading="loadingDone" :color="color")
 			.item(v-for="done in doneItems")
 				p.done
 					i.fa.fa-check-square

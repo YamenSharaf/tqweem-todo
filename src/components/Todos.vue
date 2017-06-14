@@ -1,6 +1,6 @@
 <script>
-
 import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
+import DotLoader from 'vue-spinner/src/DotLoader.vue'
   export default {
     name: 'todos',
     data () {
@@ -8,12 +8,16 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
         todoInput: '',
         todoItems: [],
         doneItems: [],
-        api_key: 'b2306b4eb272a2956e873591b392f9ff'
+        api_key: 'b2306b4eb272a2956e873591b392f9ff',
+        color: '#8BC34A',
+        loadingTodo: true,
+        loadingDone: true
       }
     },
     methods: {
       // Handle adding a new todo item
       addTodo () {
+        // Validate if user inputs empty string
         if (this.todoInput === '') {
           this.$toast(`<i class="fa fa-meh-o"></i>Please enter your text first`, {
             horizontalPosition: 'center',
@@ -21,9 +25,12 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
             duration: 4000
           })
         }
+      this.todoItems = []
+      this.loadingTodo = true
       createTask(this.todoInput)
       .then((res) => {
         if (res.status === 'success') {
+          this.loadingTodo = false
           this.$toast(`<i class="fa fa-smile-o"></i>Item added`, {
             horizontalPosition: 'center',
             className: 'toast-success',
@@ -52,6 +59,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
           })
           }, 1500)
         }
+        this.loadingTodo = false
         // reversing the array to show newest first
         this.todoItems = res.data.reverse()
       }).catch((err) => {
@@ -60,6 +68,7 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
       // Get completed tasks
       getDoneTasks()
       .then((res) => {
+        this.loadingDone = false
         // reversing the array to show newest first
         this.doneItems = res.data.reverse()
       }).catch((err) => {
@@ -68,8 +77,11 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
     },
     // Handle put request to change status
     markDone (id) {
+      this.doneItems = []
+      this.loadingDone = true
       crossTask(id)
       .then((res) => {
+        this.loadingDone = false
         this.refreshTodos()
       })
       .catch((err) => {
@@ -101,7 +113,10 @@ import {createTask, getTodoTasks, getDoneTasks, crossTask} from '@/api/tasks'
           })
         }
       })
-    }
+    },
+  components: {
+    DotLoader
+  }
   }
 </script>
 

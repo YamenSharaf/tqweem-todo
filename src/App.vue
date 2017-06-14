@@ -25,7 +25,7 @@ export default {
       this.$router.push('/')
     },
     userRedirect () {
-      if (this.user !== '' || undefined || null) {
+      if (this.user !== '' || undefined || null || false) {
         this.$router.push('/todos')
       } else {
         this.$router.push('/')
