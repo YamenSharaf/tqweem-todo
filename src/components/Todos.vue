@@ -87,6 +87,15 @@ import DotLoader from 'vue-spinner/src/DotLoader.vue'
       .catch((err) => {
         console.log(err)
       })
+    },
+    keenAlert () {
+      alert('me here')
+    },
+    openModal (ref) {
+      this.$refs[ref].open()
+    },
+    closeModal (ref) {
+        this.$refs[ref].close()
     }
     },
     computed: {

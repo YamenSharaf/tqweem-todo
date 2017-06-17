@@ -37,6 +37,7 @@
 			justify-content: center
 			align-items: flex-start
 			.header__controls
+				padding: 0 em(20) 0 0
 				display: flex
 				width: 100%
 				justify-content: space-between
@@ -47,7 +48,7 @@
 				font-family: $font--title
 				text-transform: uppercase
 			form
-				button
+				.add-button
 					+button
 					background-color: $color__primary
 					margin: em(5) em(10)
@@ -97,7 +98,13 @@
 					cursor: default
 					color: $color__accent--grey
 
+// .ui-modal__body
+// 	display: flex
+// 	flex-direction: column
+// 	justify-content: space-around
+// 	align-items: center
 
 
-
+.ui-textbox__input
+	border: none
 

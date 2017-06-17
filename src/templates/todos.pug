@@ -5,11 +5,13 @@
 				h3
 					i.fa.fa-arrow-right
 					| Todo Items ({{todoCount}})
-				form(method="post")
-					input(type="text" v-model="todoInput" placeholder="Todo item")
-					button(type="submit" @click.prevent="addTodo")
-						i.fa.fa-plus
-						| Add
+				ui-button(color='green' @click.prevent="openModal('add-modal')")
+					| ADD POST
+				ui-modal(ref='add-modal' title="Add an item")
+					form(@submit.prevent="addTodo();closeModal('add-modal')")
+						ui-textbox(v-model="todoInput" name="todoText" type="text" placeholder="Enter your todo Item")
+						ui-button(color='green' @click.prevent="addTodo();closeModal('add-modal')") Submit
+						
 			hr
 		.panel__items
 			dot-loader(:loading="loadingTodo" :color="color")
