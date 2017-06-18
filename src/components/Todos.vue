@@ -9,6 +9,7 @@ import DotLoader from 'vue-spinner/src/DotLoader.vue'
         todoItems: [],
         doneItems: [],
         api_key: 'b2306b4eb272a2956e873591b392f9ff',
+        // Spinner properties
         color: '#8BC34A',
         loadingTodo: true,
         loadingDone: true
@@ -82,6 +83,7 @@ import DotLoader from 'vue-spinner/src/DotLoader.vue'
       crossTask(id)
       .then((res) => {
         this.loadingDone = false
+        // Refresh list when done
         this.refreshTodos()
       })
       .catch((err) => {
