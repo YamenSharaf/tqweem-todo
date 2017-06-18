@@ -88,12 +88,11 @@ import DotLoader from 'vue-spinner/src/DotLoader.vue'
         console.log(err)
       })
     },
-    keenAlert () {
-      alert('me here')
-    },
+    // The add task modal trigger
     openModal (ref) {
       this.$refs[ref].open()
     },
+    // Closing the modal
     closeModal (ref) {
         this.$refs[ref].close()
     }
